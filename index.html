@@ -4,98 +4,172 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hasta+ Privacy Policy</title>
+<meta name="description" content="How Hasta+ handles your data: gestures are read on your phone, camera frames are never kept, and nothing is sold.">
 <style>
-  :root { --bg: #f4f7f5; --fg: #18201c; --muted: #66706a; --rule: #dbe4de; --accent: #3f7d5e; }
+  :root {
+    --bg: #f3f6f4; --card: #ffffff; --fg: #17201b; --muted: #5f6b64; --rule: #dde6e0;
+    --accent: #3f7d5e; --accent-soft: #e3efe8; --gold: #f3c04f;
+  }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #111513; --fg: #e9efeb; --muted: #a9b4ad; --rule: #2f3833; --accent: #a3cbb5; }
+    :root { --bg: #0f1412; --card: #171e1a; --fg: #e8efea; --muted: #a3afa8; --rule: #27302b; --accent: #a3cbb5; --accent-soft: #1f2c25; --gold: #e8b84a; }
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body { margin: 0; background: var(--bg); color: var(--fg);
-         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-  main { max-width: 680px; margin: 0 auto; padding: 48px 20px 64px; }
-  h1 { font-size: 32px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 6px; }
-  h2 { font-size: 19px; margin: 36px 0 8px; }
-  p, li { color: var(--fg); }
-  .meta { color: var(--muted); font-size: 14px; margin: 0 0 28px; }
-  .lead { font-size: 18px; padding: 16px 18px; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); border-radius: 0 10px 10px 0; }
-  ul { padding-left: 22px; }
-  li { margin: 6px 0; }
-  hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0 20px; }
+         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 72px; }
+  header.hero { background: linear-gradient(160deg, var(--accent-soft), var(--card)); border: 1px solid var(--rule);
+                border-radius: 28px; padding: 32px 26px; text-align: center; }
+  .shield { width: 64px; height: 64px; border-radius: 20px; background: var(--accent); color: var(--card);
+            display: inline-flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 12px; }
+  h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
+  .lead { font-size: 18px; margin: 0 auto; max-width: 600px; }
+  .glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 20px 0 8px; }
+  .glance div { background: var(--card); border: 1px solid var(--rule); border-radius: 20px; padding: 16px; text-align: center; }
+  .glance b { display: block; font-size: 22px; margin-bottom: 2px; }
+  .glance span { color: var(--muted); font-size: 14px; }
+  nav.toc { background: var(--card); border: 1px solid var(--rule); border-radius: 20px; padding: 16px 20px; margin: 20px 0; }
+  nav.toc strong { display: block; margin-bottom: 6px; }
+  nav.toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; }
+  @media (max-width: 560px) { nav.toc ol { columns: 1; } }
+  nav.toc a { color: var(--accent); text-decoration: none; }
+  section { background: var(--card); border: 1px solid var(--rule); border-radius: 22px; padding: 6px 22px 14px; margin: 14px 0; }
+  section.new { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 25%, transparent); }
+  h2 { font-size: 20px; margin: 18px 0 8px; display: flex; align-items: center; gap: 10px; }
+  h2 .ic { width: 34px; height: 34px; border-radius: 11px; background: var(--accent-soft); display: inline-flex;
+           align-items: center; justify-content: center; font-size: 18px; flex: none; }
+  .tag { background: var(--gold); color: #4a3200; font-size: 12px; font-weight: 700; border-radius: 99px; padding: 2px 9px; }
+  ul { padding-left: 22px; } li { margin: 6px 0; }
+  .tablewrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 12px; }
+  th, td { text-align: left; vertical-align: top; padding: 9px 8px; border-top: 1px solid var(--rule); }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; border-top: 0; }
   a { color: var(--accent); }
-  footer { color: var(--muted); font-size: 14px; }
+  footer { color: var(--muted); font-size: 14px; text-align: center; margin-top: 36px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Privacy Policy</h1>
-  <p class="meta">Hasta+: Hand Gesture Control · Effective 3 November 2026</p>
+  <header class="hero">
+    <div class="shield" aria-hidden="true">🛡️</div>
+    <h1>Hasta+ Privacy Policy</h1>
+    <p class="meta">Hasta+: Air Gestures control · Flashmonk Developer · Effective 27 November 2026</p>
+    <p class="lead">Hasta+ reads your hand gestures with the front camera, entirely on your phone. Camera frames are processed in memory and thrown away: never saved, uploaded or used for training. There are no analytics and no crash reporting, and we never sell or share your data.</p>
+  </header>
 
-  <p class="lead">Hasta+ reads your hand gestures with the front camera, entirely on your phone. Camera frames are processed in memory and thrown away; they are never saved, uploaded or used for training. There are no accounts, no analytics and no crash reporting. The only internet traffic is for Google Play and, for free users, ads from Google AdMob.</p>
+  <div class="glance">
+    <div><b>On-device</b><span>Gesture AI runs on your phone, even offline</span></div>
+    <div><b>0 images</b><span>Camera frames are never kept or sent</span></div>
+    <div><b>Never sold</b><span>No analytics, no data brokers</span></div>
+  </div>
 
-  <h2>What we collect</h2>
-  <p>We, the developer, do not collect, receive, sell or share any personal data. Hasta+ has no sign-in and no servers of its own, and it contains no analytics or crash-reporting software. The ad and Google Play services described below are run by Google under Google's own privacy policy.</p>
+  <nav class="toc" aria-label="Contents">
+    <strong>Contents</strong>
+    <ol>
+      <li><a href="#collect">What we collect</a></li>
+      <li><a href="#camera">The camera</a></li>
+      <li><a href="#phone">What stays on your phone</a></li>
+      <li><a href="#invites">Invite friends</a></li>
+      <li><a href="#a11y">Accessibility service</a></li>
+      <li><a href="#permissions">Permissions</a></li>
+      <li><a href="#ads">Ads</a></li>
+      <li><a href="#play">Google Play and purchases</a></li>
+      <li><a href="#delete">Deleting your data</a></li>
+      <li><a href="#contact">Children, changes and contact</a></li>
+    </ol>
+  </nav>
 
-  <h2>The camera</h2>
-  <ul>
-    <li><strong>On the phone only.</strong> Hand tracking uses an open-source on-device model (Google MediaPipe), with Hasta AI, our own recognition layer, running on top of it. Both work fully offline.</li>
-    <li><strong>Frames are never kept.</strong> Each camera frame is turned into hand-position numbers (landmarks) in memory and then discarded. No frame is written to storage or sent anywhere.</li>
-    <li><strong>Only while it's on.</strong> The camera runs only while gesture control is turned on, so Android's camera indicator always tells the truth. It pauses on the lock screen unless you allow it.</li>
-  </ul>
+  <section id="collect">
+    <h2><span class="ic">📋</span>What we collect</h2>
+    <p>Hasta+ works without an account, and you never give us your name, email or phone number. It contains no analytics or crash-reporting software. The only information that leaves your phone is:</p>
+    <ul>
+      <li>for the <a href="#invites">Invite friends</a> programme, a small anonymous record described below, stored in Google Firebase;</li>
+      <li>what Google needs to show ads to free users (<a href="#ads">Ads</a>) and to run Google Play (<a href="#play">Google Play and purchases</a>), handled by Google under Google's own privacy policy.</li>
+    </ul>
+    <p>We do not sell, rent or share your data with anyone, and we do not use it for advertising.</p>
+  </section>
 
-  <h2>What stays on your phone</h2>
-  <p>Hasta+ keeps the following in its private storage on your device:</p>
-  <ul>
-    <li>Your settings, gesture mappings, macros and which apps use which gestures</li>
-    <li>Custom gestures you train, stored as hand-position numbers, never as images</li>
-    <li>Daily counts of which gestures you used, and a short log of when gesture control started, stopped or paused (shown on Home)</li>
-    <li>Game scores, streaks and daily lives for the Hasta+ widget games</li>
-  </ul>
-  <p>Android cloud backup and device-to-device transfer are turned off for Hasta+, so none of this is copied to Google or any other cloud.</p>
+  <section id="camera">
+    <h2><span class="ic">📷</span>The camera</h2>
+    <ul>
+      <li><strong>On the phone only.</strong> Hand tracking uses an open-source on-device model (Google MediaPipe), with Hasta AI, our own recognition layer, running on top of it. Both work fully offline.</li>
+      <li><strong>Frames are never kept.</strong> Each camera frame is turned into hand-position numbers (landmarks) in memory and then discarded. No frame is written to storage or sent anywhere.</li>
+      <li><strong>Only while it's on.</strong> The camera runs only while gesture control is turned on, so Android's camera indicator always tells the truth. It pauses on the lock screen unless you allow it.</li>
+    </ul>
+  </section>
 
-  <h2>Photos, videos and drawings you save</h2>
-  <p>When you take a photo or video with Hasta+ Camera, save a Magic Pad drawing, or save a game score card to share, the file is saved to your phone's gallery (Pictures/Hasta+ or Movies/Hasta+). Like any gallery file, other apps you have given media access can see it. We never receive a copy.</p>
+  <section id="phone">
+    <h2><span class="ic">📱</span>What stays on your phone</h2>
+    <p>Hasta+ keeps the following in its private storage on your device, and nowhere else:</p>
+    <ul>
+      <li>Your settings, gesture mappings, macros and which apps use which gestures</li>
+      <li>Custom gestures you train, stored as hand-position numbers, never as images</li>
+      <li>Daily counts of which gestures you used, and a short log of when gesture control started, stopped or paused</li>
+      <li>Game scores, streaks and daily lives for the Hasta+ widget games</li>
+    </ul>
+    <p>Android cloud backup and device-to-device transfer are turned off for Hasta+. <strong>Backups you export</strong> (Settings › Privacy and backup) are saved as a file wherever you choose; the file is not encrypted, so keep it somewhere you trust. <strong>Photos, videos and drawings</strong> you save from Hasta+ Camera, Magic Pad or the games go to your gallery (Pictures/Hasta+ or Movies/Hasta+), where other apps with media access can see them. We never receive a copy of any of these.</p>
+  </section>
 
-  <h2>Backups you export</h2>
-  <p>Settings › Backup can save your settings, gesture mappings, macros and custom gestures (as numbers, never images) to a file wherever you choose, and restore them later. The file is not encrypted, so keep it somewhere you trust. We never receive a copy.</p>
+  <section id="invites" class="new">
+    <h2><span class="ic">🎁</span>Invite friends <span class="tag">New</span></h2>
+    <p>You can share a link that gives a friend a longer free preview, and earns you a month of premium for each friend who keeps using Hasta+. To count invites fairly and stop abuse, Hasta+ uses Google Firebase (Authentication, Cloud Functions and Cloud Firestore, run by Google) and the Google Play Integrity API.</p>
+    <div class="tablewrap">
+    <table>
+      <tr><th>What is sent</th><th>Why</th></tr>
+      <tr><td>A random app ID from an anonymous Firebase sign-in (no name, email or Google account)</td><td>To recognise this copy of the app</td></tr>
+      <tr><td>A one-way scrambled (SHA-256) value made from your phone's Android ID; the ID itself never leaves the phone</td><td>So each phone can be invited only once, even after reinstalling</td></tr>
+      <tr><td>Your invite code, and the code of the friend who invited you, if any (read from the Google Play install link)</td><td>To link a friend to their inviter</td></tr>
+      <tr><td>The days you opened Hasta+ in your first week, whether setup is finished, and whether a paid plan is active</td><td>To decide when a friend qualifies, and to start earned months after a paid plan ends</td></tr>
+      <tr><td>A Google Play Integrity verdict (whether the app came from Google Play and runs on a genuine phone)</td><td>To stop fake installs</td></tr>
+    </table>
+    </div>
+    <p>The server keeps, for each phone: its invite code, who invited it, those days, how many friends joined and qualified, and how much premium was earned. Nothing else: no camera images, contacts, location, screen content or anything you type. The data is stored in Google Cloud in Mumbai, India, is only reachable by our server functions, and is never shared or used for ads. It is kept while invites are in use; to delete it, email us your invite code (Settings › Invite friends) and we will remove it within 30 days.</p>
+  </section>
 
-  <h2>Accessibility service</h2>
-  <p>If you turn it on, Hasta+ uses Android's Accessibility Service API to carry out the actions you assign to gestures, such as scrolling, going back, or pressing a button like Like or Next. To press a named button, it looks at the buttons on the screen at that moment to find the right one. It does not store, log or send what is on your screen, and it is blocked on password fields and banking apps by default. You can turn it off at any time in Android Settings › Accessibility.</p>
+  <section id="a11y">
+    <h2><span class="ic">♿</span>Accessibility service</h2>
+    <p>If you turn it on, Hasta+ uses Android's Accessibility Service API to carry out the actions you assign to gestures, such as scrolling, going back, or pressing a button like Like or Next. To press a named button, it looks at the buttons on the screen at that moment to find the right one. It does not store, log or send what is on your screen, and it is blocked on password fields and banking apps by default. You can turn it off at any time in Android Settings › Accessibility.</p>
+  </section>
 
-  <h2>Permissions and why they are used</h2>
-  <ul>
-    <li><strong>Camera</strong>: to see your hand gestures, and to take photos and videos in Hasta+ Camera.</li>
-    <li><strong>Microphone</strong>: only to record sound with videos in Hasta+ Camera. You can turn sound off.</li>
-    <li><strong>Notifications</strong> and <strong>foreground service</strong>: to show that gesture control is running and let you stop it.</li>
-    <li><strong>Run at startup</strong>: to bring gesture control back after a restart, if you chose that.</li>
-    <li><strong>Media controls (optional notification access)</strong>: only to control what's playing, such as seeking or liking. Hasta+ does not read your notifications.</li>
-    <li><strong>Phone calls (optional)</strong>: asked for only if you assign a gesture to answer or reject calls.</li>
-    <li><strong>Biometrics</strong>: only if you turn on Privacy lock. Android does the check; Hasta+ never receives your fingerprint or face data.</li>
-    <li><strong>Internet</strong>: only for ads and Google Play, described below.</li>
-  </ul>
-  <p>Hasta+ does not use your location or contacts.</p>
+  <section id="permissions">
+    <h2><span class="ic">🔑</span>Permissions and why they are used</h2>
+    <ul>
+      <li><strong>Camera</strong>: to see your hand gestures, and to take photos and videos in Hasta+ Camera.</li>
+      <li><strong>Microphone</strong>: only to record sound with videos in Hasta+ Camera. You can turn sound off.</li>
+      <li><strong>Notifications</strong> and <strong>foreground service</strong>: to show that gesture control is running and let you stop it, and to tell you when a friend you invited qualifies.</li>
+      <li><strong>Run at startup</strong>: to bring gesture control back after a restart, if you chose that.</li>
+      <li><strong>Media controls (optional notification access)</strong>: only to control what's playing, such as seeking or liking. Hasta+ does not read your notifications.</li>
+      <li><strong>Phone calls (optional)</strong>: asked for only if you assign a gesture to answer or reject calls.</li>
+      <li><strong>Biometrics</strong>: only if you turn on Privacy lock. Android does the check; Hasta+ never receives your fingerprint or face data.</li>
+      <li><strong>Internet</strong>: for ads, Google Play and Invite friends, as described here.</li>
+      <li><strong>Installed apps (WhatsApp)</strong>: only to show a WhatsApp share button when WhatsApp is installed.</li>
+    </ul>
+    <p>Hasta+ does not use your location or contacts.</p>
+  </section>
 
-  <h2>Ads</h2>
-  <p>Hasta+ shows no ads during the 3-day free preview or with a paid plan. After the preview, the free version shows ads from Google AdMob. In the Hasta+ widget games, you can also choose to watch a short video ad to get an extra life. Like most mobile ads, AdMob may use your device's advertising ID, IP address and basic device information to show and measure ads. In the European Economic Area, the UK and Switzerland, you are asked for consent first, and you can change your choice later in the app. You can reset or delete your advertising ID in Android Settings › Privacy › Ads. Learn more in <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a>.</p>
+  <section id="ads">
+    <h2><span class="ic">📣</span>Ads</h2>
+    <p>Hasta+ shows no ads during the free preview (3 days, or 7 when a friend invited you) or with premium. After the preview, the free version shows ads from Google AdMob, and in the widget games you can choose to watch a short video for an extra life. Like most mobile ads, AdMob may use your device's advertising ID, IP address and basic device information to show and measure ads. In the European Economic Area, the UK and Switzerland, you are asked for consent first, and you can change your choice later in Settings › Privacy and backup. You can reset or delete your advertising ID in Android Settings › Privacy › Ads. Learn more in <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a>.</p>
+  </section>
 
-  <h2>Google Play services</h2>
-  <p>Hasta+ asks the Google Play Store app whether a newer version is available so it can ask you to update, and the Rate Hasta+ button opens the app's Google Play page. These are handled by Google Play under your Google account; Hasta+ sends none of your data to Google.</p>
+  <section id="play">
+    <h2><span class="ic">🛒</span>Google Play and purchases</h2>
+    <p>Hasta+ asks the Google Play Store app whether a newer version is available, and the Rate Hasta+ button opens the app's Google Play page. Paid plans are bought through Google Play: Google handles the payment, and we never see your card or payment details. Hasta+ checks with Google Play only which plan you own.</p>
+  </section>
 
-  <h2>Purchases</h2>
-  <p>Paid plans are bought through Google Play. Google handles the payment; we never see your card or payment details. Hasta+ checks with Google Play only which plan you own.</p>
+  <section id="delete">
+    <h2><span class="ic">🗑️</span>Deleting your data</h2>
+    <p>You can remove custom gestures, mappings and macros inside the app. Uninstalling Hasta+ permanently deletes everything it stored on your phone. Photos, videos and drawings in your gallery are separate files you can delete yourself. For your Invite friends record, email us your invite code and we will delete it within 30 days.</p>
+  </section>
 
-  <h2>Deleting your data</h2>
-  <p>You can remove custom gestures, mappings and macros inside the app. Uninstalling Hasta+ permanently deletes everything it stored in its private storage. Photos, videos and drawings in your gallery are separate files that you can delete yourself.</p>
+  <section id="contact">
+    <h2><span class="ic">✉️</span>Children, changes and contact</h2>
+    <p><strong>Children.</strong> Hasta+ is not directed at children under 13, and we do not knowingly collect information from them.</p>
+    <p><strong>Changes.</strong> If a future version changes how data is handled, this page is updated before that version is released, and the date at the top changes.</p>
+    <p><strong>Contact.</strong> Questions or deletion requests: <a href="mailto:flashmonkdeveloper@gmail.com">flashmonkdeveloper@gmail.com</a></p>
+  </section>
 
-  <h2>Children</h2>
-  <p>Hasta+ is not directed at children under 13. We collect no information from anyone, including children.</p>
-
-  <h2>Changes to this policy</h2>
-  <p>If a future version changes how data is handled, this page will be updated before that version is released, and the date above will change.</p>
-
-  <h2>Contact</h2>
-  <p>Questions about this policy: <a href="mailto:flashmonkdeveloper@gmail.com">flashmonkdeveloper@gmail.com</a></p>
-
-  <hr>
   <footer>Hasta+ · Flashmonk Developer</footer>
 </main>
 </body>
